@@ -37,6 +37,8 @@ module.exports = {
           700: "#384262",
         },
         primary: {
+          50: "#F6F8FD",
+          purple: "#4318FF",
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
@@ -69,6 +71,7 @@ module.exports = {
         IBMPlex: ["var(--font-ibm-plex)"],
       },
       backgroundImage: {
+        "dotted-pattern": "url('/assets/images/dotted-pattern.png')",
         "purple-gradient": "url('/assets/images/gradient-bg.svg')",
         banner: "url('/assets/images/banner-bg.png')",
       },

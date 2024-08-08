@@ -3,7 +3,6 @@ import {
   login,
   signInWithGoogle,
 } from "@/lib/actions/user.actions";
-import { connectToDatabase } from "@/lib/database";
 import User from "@/lib/database/models/user.model";
 import { loginFormSchema } from "@/validations";
 import type {
@@ -14,10 +13,10 @@ import type {
 } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID!;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!;
 const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET;
+
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -66,9 +65,6 @@ export const authOptions: NextAuthOptions = {
         token.provider = account.provider;
       }
       if (trigger === "update") {
-        if (session?.isPreferencesDone) {
-          token.isPreferencesDone = session.isPreferencesDone;
-        }
         if (session?.creditBalance) {
           token.creditBalance = session.creditBalance;
         }
@@ -121,7 +117,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/sign-in",
     signOut: "/",
-    newUser: "/user-preferences",
     verifyRequest: "/verify-email",
   },
 };

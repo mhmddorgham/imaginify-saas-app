@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from "../ui/card";
 import { Input } from "../ui/input";
-import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import {
   Form,
@@ -60,8 +59,6 @@ export default function SignupForm() {
           description: "Something went wrong, try again later",
         });
       }
-
-      // call the createUser function
     } catch (err: any) {
       console.log("err in in ", err);
       form.setError("root", {
@@ -74,7 +71,7 @@ export default function SignupForm() {
   return (
     <Card className="mx-auto max-w-[420px] min-h-[500px] rounded-[20px] shadow-sm bg-white z-10  ">
       <CardHeader>
-        <CardTitle className="text-2xl text-pink-primary font-[600]">
+        <CardTitle className="text-2xl text-primary-purple font-[600]">
           Sign Up
         </CardTitle>
         <CardDescription className="text-gray-primary py-2">
@@ -97,7 +94,7 @@ export default function SignupForm() {
                         <Input
                           {...field}
                           placeholder="Max"
-                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                         />
                       </FormControl>
                       <FormMessage className="text-red-500" />
@@ -115,7 +112,7 @@ export default function SignupForm() {
                         <Input
                           {...field}
                           placeholder="Mustermann"
-                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                         />
                       </FormControl>
                       <FormMessage className="text-red-500" />
@@ -134,7 +131,7 @@ export default function SignupForm() {
                       <Input
                         {...field}
                         type="email"
-                        className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                        className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                         placeholder="jack@gmail.com"
                       />
                     </FormControl>
@@ -152,7 +149,7 @@ export default function SignupForm() {
                       <FormControl>
                         <Input
                           type={viewPassword ? "text" : "password"}
-                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                           placeholder="********"
                           {...field}
                         />
@@ -160,12 +157,12 @@ export default function SignupForm() {
                       {viewPassword ? (
                         <EyeIcon
                           onClick={() => setViewPassword(false)}
-                          className="w-5 h-5 text-pink-primary absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
+                          className="w-5 h-5 text-primary-purple absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
                         />
                       ) : (
                         <EyeSlashIcon
                           onClick={() => setViewPassword(true)}
-                          className="w-5 h-5 text-pink-primary absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
+                          className="w-5 h-5 text-primary-purple absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
                         />
                       )}
                     </div>
@@ -183,7 +180,7 @@ export default function SignupForm() {
                       <FormControl>
                         <Input
                           type={viewPassword ? "text" : "password"}
-                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                           placeholder="********"
                           {...field}
                         />
@@ -191,12 +188,12 @@ export default function SignupForm() {
                       {viewPassword ? (
                         <EyeIcon
                           onClick={() => setViewPassword(false)}
-                          className="w-5 h-5 text-pink-primary absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
+                          className="w-5 h-5 text-primary-purple absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
                         />
                       ) : (
                         <EyeSlashIcon
                           onClick={() => setViewPassword(true)}
-                          className="w-5 h-5 text-pink-primary absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
+                          className="w-5 h-5 text-primary-purple absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
                         />
                       )}
                     </div>
@@ -206,7 +203,7 @@ export default function SignupForm() {
               />
               <Button
                 disabled={form.formState.isSubmitting}
-                className="w-full my-0 bg-pink-primary rounded-2xl px-5 py-3 text-white  hover:bg-pink-secondary duration-200 mt-3   "
+                className="w-full my-0 bg-primary-purple rounded-2xl px-5 py-3 text-white  hover:bg-pink-secondary duration-200 mt-3   "
                 type="submit"
               >
                 {form.formState.isSubmitting ? "Submitting..." : "Sign Up"}
@@ -223,7 +220,7 @@ export default function SignupForm() {
           <div className="relative">
             <Button
               onClick={() => signIn("google")}
-              className="w-full my-0 border border-pink-primary text-black bg-gray-bg rounded-2xl px-5 py-3   mt-3 hover:bg-white duration-200"
+              className="w-full my-0 border border-primary-purple text-black bg-gray-bg rounded-2xl px-5 py-3   mt-3 hover:bg-white duration-200"
               variant="outline"
             >
               Sign up with Google
@@ -239,7 +236,7 @@ export default function SignupForm() {
         </div>
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <Link href="sign-in" className="underline text-pink-primary">
+          <Link href="sign-in" className="underline text-primary-purple">
             Sign in
           </Link>
         </div>
