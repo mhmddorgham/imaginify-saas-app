@@ -69,7 +69,7 @@ export default function LoginForm() {
           title: "Login successful",
           description: "You have successfully logged in.",
         });
-        router.push("/user-preferences");
+        router.push("/");
       }
     } catch (error) {
       form.setError("root", {
@@ -82,7 +82,7 @@ export default function LoginForm() {
   return (
     <Card className="mx-auto max-w-[420px] max-h-[600px] min-h-[500px] rounded-[20px] shadow-sm bg-white z-10  ">
       <CardHeader>
-        <CardTitle className="text-2xl text-pink-primary font-[600]">
+        <CardTitle className="text-2xl text-primary-purple font-[600]">
           Login
         </CardTitle>
         <CardDescription className="text-gray-primary py-2">
@@ -103,7 +103,7 @@ export default function LoginForm() {
                       <Input
                         {...field}
                         type="email"
-                        className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                        className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                         placeholder="jack@gmail.com"
                       />
                     </FormControl>
@@ -121,7 +121,7 @@ export default function LoginForm() {
                       <FormControl>
                         <Input
                           type={viewPassword ? "text" : "password"}
-                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-pink-primary duration-100 outline-none placeholder:text-gray-400"
+                          className="border-gray-300 !rounded-[10px] !min-h-11 focus:border-primary-purple duration-100 outline-none placeholder:text-gray-400"
                           placeholder="********"
                           {...field}
                         />
@@ -129,12 +129,12 @@ export default function LoginForm() {
                       {viewPassword ? (
                         <EyeIcon
                           onClick={() => setViewPassword(false)}
-                          className="w-5 h-5 text-pink-primary absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
+                          className="w-5 h-5 text-primary-purple absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
                         />
                       ) : (
                         <EyeSlashIcon
                           onClick={() => setViewPassword(true)}
-                          className="w-5 h-5 text-pink-primary absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
+                          className="w-5 h-5 text-primary-purple absolute right-3 top-[50%] translate-y-[-50%] cursor-pointer"
                         />
                       )}
                     </div>
@@ -145,7 +145,7 @@ export default function LoginForm() {
 
               <Button
                 disabled={form.formState.isSubmitting}
-                className="w-full my-0 bg-pink-primary rounded-2xl px-5 py-3 text-white  hover:bg-pink-secondary duration-200   "
+                className="w-full my-0 bg-primary-purple rounded-2xl px-5 py-3 text-white  hover:bg-pink-secondary duration-200   "
                 type="submit"
               >
                 {form.formState.isSubmitting ? "Submitting..." : "Login"}
@@ -159,7 +159,7 @@ export default function LoginForm() {
           </Form>
           <Link
             href="#"
-            className="ml-auto inline-block text-sm underline  text-pink-primary"
+            className="ml-auto inline-block text-sm underline  text-primary-purple"
           >
             Forgot your password?
           </Link>
@@ -167,7 +167,7 @@ export default function LoginForm() {
           <div className="relative">
             <Button
               onClick={() => signIn("google")}
-              className="w-full my-0 border border-pink-primary text-black bg-gray-bg rounded-2xl px-5 py-3   mt-3 hover:bg-white duration-200"
+              className="w-full my-0 border border-primary-purple text-black bg-gray-bg rounded-2xl px-5 py-3   mt-3 hover:bg-white duration-200"
               variant="outline"
             >
               Sign up with Google
@@ -183,7 +183,7 @@ export default function LoginForm() {
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
-          <Link href="sign-up" className="underline text-pink-primary">
+          <Link href="sign-up" className="underline text-primary-purple">
             Sign up
           </Link>
         </div>

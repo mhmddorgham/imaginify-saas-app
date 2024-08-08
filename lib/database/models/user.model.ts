@@ -16,7 +16,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  photo: {
+  image: {
+    type: String,
+  },
+  provider: {
     type: String,
   },
   planId: {
@@ -25,7 +28,7 @@ const UserSchema = new Schema({
   },
   creditBalance: {
     type: Number,
-    default: 10,
+    default: 100,
   },
 });
 
