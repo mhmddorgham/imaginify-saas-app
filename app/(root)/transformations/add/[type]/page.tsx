@@ -1,11 +1,11 @@
-import Header from "@/components/Shared/Header";
+import Header from "@/components/shared/Header";
 import TransformationForm from "@/components/shared/TransformationForm";
 import { transformationTypes } from "@/constants";
 
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/options";
-import { IClientSession } from "@/components/Shared/Sidebar";
+import { IClientSession } from "@/components/shared/Sidebar";
 
 const AddTransformationTypePage = async ({
   params: { type },

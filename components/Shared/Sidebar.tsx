@@ -1,7 +1,6 @@
 "use client";
 
 import { navLinks } from "@/constants";
-// import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,7 +15,6 @@ export interface IClientSession extends Session {
     name?: string | null;
     email?: string | null;
     image?: string | null;
-    isPreferencesDone: boolean;
     creditBalance: number;
     planId: number;
 
